@@ -32,4 +32,4 @@ for gif_frame in gif_frames:
     out.write(combined)
 
 out.release()
-print(f"🎥 Video saved: {output_video_path}")
+print(f"Video saved: {output_video_path}")

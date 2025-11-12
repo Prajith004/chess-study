@@ -35,11 +35,11 @@ for file in glob.glob(os.path.join(input_folder, "*.jpg")):
         continue
     landmarks = get_landmarks(img)
     if landmarks is None:
-        print(f"⚠️ Skipping (no face found): {file}")
+        print(f" Skipping (no face found): {file}")
         continue
     landmarks_list.append(landmarks)
     images.append(img)
-    print(f"✅ Loaded: {file}")
+    print(f"✅Loaded: {file}")
 
 if not images:
     raise RuntimeError("No valid faces found!")
@@ -56,7 +56,7 @@ for img, lm in zip(images, landmarks_list):
 # Average aligned faces
 avg_face = np.mean(aligned_faces, axis=0).astype(np.uint8)
 cv2.imwrite(output_avg_path, avg_face)
-print(f"\n🎉 Saved aligned average face: {output_avg_path}")
+print(f"\n Saved aligned average face: {output_avg_path}")
 
 # Animated GIF of progressive averaging
 frames = []
